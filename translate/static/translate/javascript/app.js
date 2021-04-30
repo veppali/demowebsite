@@ -48,18 +48,6 @@ async function sendText()
     setOutputValue(data)   
 }
 
-async function getLanguages()
-{
-    console.log("getlanguages")
-    const res = await fetch("http://localhost:5000/languages",
-    {
-        method:"GET",        
-        headers:{"Content-Type":"application/json"}
-    });
-    var data = JSON.stringify(await res.json());
-    console.log(data)
-}
-
 function clearText()
 {
     document.getElementById('inputId').value="";

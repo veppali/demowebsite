@@ -1,7 +1,5 @@
 Small demo website using Django+html+css+javascript.
 
-default django superuser is admin and password is admin
-
 Translate Demo:
     Uses libretranslate api calls to have translation functionality on a website.
 
