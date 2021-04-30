@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load blog_tags %}
+{% block content %}
+
+<h1>Welcome to the blog demo</h1>
+<p>{% total_posts %} blog posts so far.</p>
+<main class="container">
+    {% if user.is_authenticated %}
+        Hi {{ user.username }}        
+        <form action="post/new">
+            <button class="btn" type="submit">Create a new blog post</button>
+        </form>
+    {% else %}
+        <p>Log in or sign up to start your blog!</p>
+        <form action="{% url 'blog:signup' %}">
+            <button class="btn" id="signup" type="submit">Sign Up</button>
+        </form>
+    {%endif%}
+
+<main class="row">
+    <p class="tags">
+    Tags:
+        {% for tag in post.tags.all %}
+            <a href="{% url "blog:post_list_by_tag" tag.slug %}">
+                {{ tag.name }}
+            </a>
+            {% if not forloop.last %}, {% endif %}
+        {% endfor %}
+    </p>
+    <div class="col">
+        {% if tag %}
+            <h2>Posts tagged with "{{ tag.name }}"</h2>
+        {% endif %}
+        {% for post in posts %}
+            <article class="post">
+                <fieldset>
+                    <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+                    <p class="tags">Tag: {{ post.tags.all|join:", "}}</p>
+                    <p>{{ post.text|linebreaksbr }}</p>
+                    <time class="date">
+                        Posted on {{ post.publish }} by {{ post.author }}
+                    </time>
+                </fieldset>
+            </article>
+        {% endfor %}
+    </div>
+</div>
+
+{% include  "blog/pagination.html" with page=posts %}
+{% endblock %}

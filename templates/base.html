@@ -1,0 +1,57 @@
+{% load blog_tags %}
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+</head>
+
+<body>  
+    <main class="container">
+      <div class="header">
+        <h1>Demo Website  </h1>
+      </div>
+    
+        {% if user.is_authenticated %}        
+            <form action="{% url 'logout' %}">
+                <button class="btn" id="logout" type="submit">Log Out</button>
+            </form>        
+        {% else %}              
+            <form action="{% url 'login' %}">
+                <button class="btn" id="login" type="submit">Log In</button>
+            </form>        
+            <form action="{% url 'blog:signup' %}">
+                <button class="btn" id="signup" type="submit">Sign Up</button>
+            </form>
+        {% endif %}
+
+        <ul class="navbar">
+          <li><a href="/main/">Main</a></li>
+          <li><a href="/blog/">Blog demo</a></li>
+          <li><a href="/translate">Translator demo</a></li>
+          <li><a href="/game/">Game demo</a></li>
+          <li><a href="about">About</a></li>
+          <li>
+            <form action="{% url 'blog:post_search' %}">
+              <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="search" value="{{ search_text }}" minlength="3">
+            </form>            
+          </li>      
+        </ul>       
+      </div>
+  <div class="content">
+  {% block content %}
+  <h1>Welcome to my Demosite</h1>
+  {% endblock %}
+  </div>
+ 
+</body>  
+  <footer class="footer">
+    <div class="footer">      
+      <p>Website by: </p>
+      <p>Contact information: <a href="mailto:email@example.com">email@example.com</a></p>
+    </div>
+  </footer>  
+</html>

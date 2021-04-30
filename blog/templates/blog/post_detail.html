@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <article class="post">    
+        <aside class="actions">
+            <form action="{% url 'blog:post_edit' pk=post.pk %}">
+                <button class="btn" type="submit">Edit</button>
+            </form>
+        </aside>    
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+        {% if post.publish %}
+            <time class="date">
+            {{ post.publish }} by {{post.auhor}}
+            </time>
+        {% endif %}
+    </article>
+    <h2>Similar psots</h2>
+    {% for posts in similar_posts %}
+        <p>
+            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+        </p>
+        {% empty %}
+            Thera are no similar posts yet.
+        {% endfor %}
+    <form method="post">
+        {% csrf_token %}
+        <h2>Comment on blog </h2>
+        {{ form.as_p }}
+        <button class="btn" type="submit">Comment</button>
+    </form>
+    {% for comment in comments %}
+    <p><strong>{{ comment.commentor}}:</strong> {{ comment.comment_text }}</p>
+    {% endfor %}
+{% endblock %}

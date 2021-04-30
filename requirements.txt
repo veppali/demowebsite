@@ -1,0 +1,3 @@
+#requirements.txt for pip installation: <pip install -r requirements.txt>
+Django
+django-taggit

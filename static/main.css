@@ -1,0 +1,290 @@
+:root
+{
+    --green: #00FF00;
+    --white: #ffffff;
+    --black: #000000;
+    --dark: #303030;
+    --purple: #430062;
+    --grey: #b4b4b4;
+    --navbargrey: #09293d;
+    --mainGrey: #14191f;
+    --highlight: #396c77;
+    --button: #11232c;
+    --header:#21515c;
+}
+
+*
+{
+    box-sizing: border-box;
+    color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn
+{
+    border-style: solid;
+    size: 3cm;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    color: var(--white);
+    background-color: var(--button);
+}
+
+.btn:hover:not(.active)
+{
+    background-color: var(--highlight);
+}
+
+  
+.dark-theme
+{
+    --bg: var(--dark);
+    --fontColor: var(--white);
+    --btnBg:var(--white);
+    --btnFontColor:var(--white);
+    --footerBg:var(--black);
+    --mainBg:var(--mainGrey);
+    --buttonColor:var(--button);
+    --buttonfontcolor:var(--white);
+}
+
+.list-group
+{    
+    width: 100%;
+    overflow: hidden;    
+    padding-right: 50%;
+    color: white;
+    float: left;
+}
+
+.list-group-item
+{
+    
+    width: 100%;    
+    padding: 10px;
+    list-style: none;
+}
+
+.text-info
+{
+    color: var(--white);    
+}
+
+body 
+{
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: var(--mainGrey);  
+}  
+  
+.header 
+{
+    padding: 10px;
+    text-align: center;
+    background: var(--header);
+    color: white;
+}  
+  
+.header h1 
+{
+    font-size: 40px;
+}  
+
+.navbar
+{    
+    position: fixed;
+    height: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--navbargrey);  
+}
+
+li
+{
+    display:list-item;
+    color: white;    
+    padding: 0px 0px;
+    text-decoration: none;
+}
+
+li a
+{
+    display:block;
+    color: white;
+    text-align: left;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover
+{
+    background-color: var(--mainGrey);
+}
+
+#id_title
+{
+    background-color: var(--button);
+    color: var(--white);
+}
+
+#id_text
+{
+    background-color: var(--button);
+    color: var(--white);
+}
+
+#id_username
+{
+    background-color: var(--button);
+    color: var(--white);
+}
+
+#id_password
+{
+    background-color: var(--button);
+    color: var(--white);
+}
+
+#id_password1
+{
+    background-color: var(--button);
+    color: var(--white);
+}
+
+#id_password2
+{
+    background-color: var(--button);
+    color: var(--white);
+}
+
+.dropdown
+{
+    background-color: var(--button);
+    color: var(--white);
+}
+
+.input
+{
+    background-color: var(--button);
+    color: var(--white);
+}
+
+#login
+{
+    position: fixed;
+    top: 4px;
+    right: 4px;
+}
+
+#logout
+{
+    position: fixed;
+    top: 4px;
+    right:4px;
+}
+
+#signup
+{
+    position: fixed;
+    top: 40px;
+    right: 4px;
+}
+
+#id_search
+{
+    background-color: var(--button);
+    color: var(--white);
+}
+
+#id_search_in
+{
+    background-color: var(--button);
+    color: var(--white);
+}
+
+#id_commentor
+{
+    background-color: var(--button);
+    color: var(--white);
+}
+
+#id_comment_text
+{
+    background-color: var(--button);
+    color: var(--white);
+}
+
+.form-control
+{  
+    background-color: var(--button);
+    color: var(--white);
+    display:block;
+    color: white;
+    text-align: left;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.btn
+{
+    border-style: solid;
+    size: 3cm;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    color: var(--white);
+    background-color: var(--button);
+}
+
+.post-form
+{
+    background-color: var(--button);
+    color: var(--white);
+}
+
+.footer
+{
+    color: var(--white);
+    padding: 5px;
+    text-align: center;
+    background:var(--footerBg);
+}
+
+div.content 
+{
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+}
+
+@media screen and (max-width: 700px) 
+{
+    .navbar {
+      width: 100%;
+      height: auto;
+      position: relative;
+      text-decoration: none;
+    }
+    .navbar a {float: left;}
+    div.content {margin-left: 0;}
+}
+  
+@media screen and (max-width: 400px) 
+{
+    .navbar a {
+      text-align: center;
+      float: right;
+    }
+}

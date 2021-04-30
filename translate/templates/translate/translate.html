@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% load static %}           
+            <div class="container">
+                <h3>Translate</h3>
+                <div class = "row">
+                    <label for="Languages">Choose language:</label>
+                    <select class="dropdown" name = "languagein" id="languagein">
+                        <option value="en">English</option>
+                        <option value="ar">Arabic</option>
+                        <option value="zh">Chinese</option>
+                        <option value="fr">French</option>
+                        <option value="de">German</option>
+                        <option value="hi">Hindi</option>
+                        <option value="ga">Irish</option>
+                        <option value="it">Italian</option>
+                        <option value="ja">Japanese</option>
+                        <option value="ko">Korean</option>
+                        <option value="pl">Polish</option>
+                        <option value="pt">Portuguese</option>
+                        <option value="ru">Russian</option>
+                        <option value="es">Spanish</option>
+                        <option value="tr">Turkish</option>                        
+                    </select>
+                    <label> To </label>
+                    <select class="dropdown" name = "languageout" id = "languageout">
+                        <option value="en">English</option>
+                        <option value="ar">Arabic</option>
+                        <option value="zh">Chinese</option>
+                        <option value="fr">French</option>
+                        <option value="de">German</option>
+                        <option value="hi">Hindi</option>
+                        <option value="ga">Irish</option>
+                        <option value="it">Italian</option>
+                        <option value="ja">Japanese</option>
+                        <option value="ko">Korean</option>
+                        <option value="pl">Polish</option>
+                        <option value="pt">Portuguese</option>
+                        <option value="ru">Russian</option>
+                        <option value="es">Spanish</option>
+                        <option value="tr">Turkish</option>                        
+                    </select>
+                    <form>
+                        <label>Enter Text</label>                        
+                        <textarea class="input" rows="5" id="inputId"></textarea> 
+                        <button class="btn" type="button"onclick="clearText()">Clear</button>                       
+                        <button class="btn" type="button" onclick="sendText()">Get Text</button>
+                        <textarea class="input" rows="5" id="outputId" readonly></textarea>    
+                    </form>
+                </div>
+            </div>              
+        </div>
+    <script src="{% static 'translate/javascript/app.js' %}"></script>
+{% endblock %}
