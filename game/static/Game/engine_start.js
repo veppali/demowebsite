@@ -1,5 +1,5 @@
-const myWasm = 'http://localhost:8000/static/Game/SpaceRocks';
-const myPck = 'http://localhost:8000/static/Game/SpaceRocks.pck';
+const myWasm = 'http://localhost:8000/static/Game/SpacyShooty';
+const myPck = 'http://localhost:8000/static/Game/SpacyShooty.pck';
 const engine = new Engine();
 Promise.all([
     // Load and init the engine

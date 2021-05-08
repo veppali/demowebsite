@@ -1,4 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
 <h3>Welcome to the main page.</h3>
+<p>Explore the website to see different "webapps". The whole website is (excluding the game demo) was made Django framework, python, css and javascript.</p>
+<p></p>
+<h4>Blog</h4>
+<p>In the blog you can create a user account and start creating your own blog posts as well as edit them after the fact. The search bar adds ability to search the blogs with tags and keywords.
+    You can also comment on other people's blog posts. (Email authentication and personal page are planned).
+</p>
+<p></p>
+<h4>Translator</h4>
+<p>The actual translation functionality is by  <a href="https://github.com/uav4geo/LibreTranslate">libretranslate</a>. 
+    The translator uses the libretranslate api to get translations to the users input text. 
+</p>
+<h4>Game</h4>
+<p>The game demo is a sidescrolling space themed shoot em up game, made with an open source <a href="https://godotengine.org/">Godot Engine</a> 
+and exported into html5 webassembly game.</p>
 {% endblock %}

@@ -20,6 +20,11 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+canvas {
+    width : 720px;
+    height : 480px;
+ }
+
 .btn
 {
     border-style: solid;
